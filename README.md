@@ -1,3 +1,3 @@
 # githook-practice
-set set
+set2
 
