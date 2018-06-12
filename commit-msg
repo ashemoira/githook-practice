@@ -1,0 +1,24 @@
+#!/usr/bin/env ruby
+
+commit_message = File.readlines(ARGV[0])
+
+filter=/(feat|style|chore|refactore|test|doc|fix)+:/
+
+warning_message=<<COMMIT_WARNING
+*****************************************************************************
+Add a prefix when committing
+
+feat (feature)
+fix (bug fix)
+docs (documentation)
+style (formatting, missing semi colons, …)
+refactor
+test (when adding missing tests)
+chore (maintain)
+*****************************************************************************
+COMMIT_WARNING
+
+if !filter.match(commit_message[0])
+  print warning_message
+end
+
