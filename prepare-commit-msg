@@ -1,10 +1,19 @@
 #!/usr/bin/env ruby
 
-current_branch = `git branch | grep '*'`.chomp.sub('* ', '')
+branch = `git branch | grep '*'`.chomp.sub('* ', '')
+commit = File.readlines(ARGV[0])
 
-commit_msgs = File.readlines(ARGV[0])
+if ARGV.length==0
+  return
+end
+
+index = commit[0].index(branch)
+if index != nil && index == 0
+  commit[0] = commit[0].sub(/^#{branch}\s/, "")
+end
+
 open(ARGV[0], 'w') {|file|
-  file.print "#{current_branch} "
-  file.puts commit_msgs
+  file.print "#{branch} "
+  file.puts commit
 }
 
