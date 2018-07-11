@@ -2,7 +2,7 @@
 
 commit_message = File.readlines(ARGV[0])
 
-filter=/(feat|style|chore|refactore|test|doc|fix)+:/
+filter=/(feat|style|chore|refactore|test|doc|fix)+.*:+/
 
 warning_message=<<COMMIT_WARNING
 *****************************************************************************
