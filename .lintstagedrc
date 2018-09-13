@@ -1,0 +1,19 @@
+{
+  "*.js": [
+    "prettier --write",
+    "eslint --fix --quiet"
+    "git add"
+  ],
+  "*.scss": [
+    "prettier --write",
+    "git add"
+  ],
+  "*.rb": [
+    "rubocop --auto-correct",
+    "git add"
+  ],
+  "*.erb": [
+    "erb-lint",
+    "git add"
+  ]
+}
