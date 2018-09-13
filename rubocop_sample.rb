@@ -1,8 +1,9 @@
 def do_something
-  return
-  foo()
+  nil
+  # foo
+  # foo
 end
 
 def foo
-  puts "test"
+  puts 'test'
 end
